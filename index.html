@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Aplicación API</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="app1.js"></script>
+        <link rel="stylesheet" href="estilos.css" />
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elementos = document.querySelectorAll('select');
+                M.FormSelect.init(elementos);
+            });
+        </script>
+    </head>
+    <body>
+        <nav>
+            <div class="nav wrapper light-blue darken-2">
+                <a href="#!" class="brand-logo"><h5>Aplicación<h5></a>
+            </div>
+        </nav>
+        <article>
+            <div class="contenedor-form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col m6 s12">
+                            <form>
+                                <div id="msj-error"></div>
+                                <div class="input-field col s12">
+                                    <input type="text" name="ciudad" id="ciudad"/>
+                                    <label htmlFor="ciudad">Ciudad:</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <select name="pais" id="pais">
+                                        <optgroup label="Países"></optgroup>
+                                        <option value="AR">Argentina</option>
+                                        <option value="BO">Bolivia</option>
+                                        <option value="BR">Brasil</option>
+                                        <option value="CL">Chile</option>
+                                        <option value="CO">Colombia</option>
+                                        <option value="EC">Ecuador</option>
+                                        <option value="GY">Guyana</option>
+                                        <option value="PY">Paraguay</option>
+                                        <option value="PE">Perú</option>
+                                        <option value="SR">Surinam</option>
+                                        <option value="UY">Uruguay</option>
+                                        <option value="VE">Venezuela</option>
+                                    </optgroup>
+                                    </select>
+                                    <label htmlFor="pais">Pais:</label>
+                                </div>
+                                <div className="input-field col s12">
+                                    <button type="button" class="waves-effect waves-light btn-large btn-block red"  id= "boton" onclick="obtenerClima()">Buscar </button>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="flag-container">
+                                    <img src="" alt="">
+                                  </div>
+                                  <div id="info-container">
+                                    <select id="countries"></select>
+                                    <p>Capital: <span id="capital"></span></p>
+                                    <p>Dialing Code: <span id="dialing-code"></span></p>
+                                    <p>Population: <span id="population"></span></p>
+                                    <p>Currencies: <span id="currencies"></span></p>
+                                    <p>Region: <span id="region"></span></p>
+                                    <p>Subregion: <span id="subregion"></span></p>
+                                  </div>
+                                  <div class="box" id="divResultado">
+                                </div>
+                                </div>
+                                <script src="app2.js"></script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>
